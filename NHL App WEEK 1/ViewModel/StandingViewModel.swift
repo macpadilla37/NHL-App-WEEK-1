@@ -8,7 +8,7 @@
 import Foundation
 
 class StandingViewModel: ObservableObject {
-        @Published var NHL =  [Team]()
+        @Published var finalArray: [StandingTeamRecord] = []
         @Published var isLoading = true
         
         @MainActor
@@ -16,20 +16,27 @@ class StandingViewModel: ObservableObject {
             do {
                 
 
-                let url = URL(string: "https://statsapi.web.nhl.com/api/v1/teams")!
+                let url = URL(string: "https://statsapi.web.nhl.com/api/v1/standings")!
                 let (data, _) = try await URLSession.shared.data(from: url)
                 print(data)
-                NHL = try JSONDecoder().decode(NationalHockeyLeague.self, from: data).teams
+                let records = try JSONDecoder().decode(StandingsResponse.self, from: data).records
+                
+                    for record in records {
+                        finalArray.append(contentsOf: record.teamRecords)
+                    }
+                
                 isLoading = false
             } catch {
-                print("Error: \(error.localizedDescription)")
+                print("Error: \(error)")
                 isLoading = false
             }
         }
+    
+
     init() {
         Task{
             await getAllStandings()
         }
     }
-    
 }
+    

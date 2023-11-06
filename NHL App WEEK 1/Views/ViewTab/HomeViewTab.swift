@@ -9,31 +9,30 @@ import Foundation
 
 struct HomeTabView: View {
     @ObservedObject var teamViewModel = TeamViewModel()
+    @ObservedObject var standingViewModel = StandingViewModel()
     var body: some View {
         NavigationView {
-                    List(teamViewModel.NHL) { team in
-                        VStack(alignment: .leading){
-                            NavigationLink {
-                                VStack{
-                                    Text("Team:")
-                                    Text(team.name)
-                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 10))
-                                    Text("Abbreviation:")
-                                    Text(team.abbreviation)
-                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 10))
-                                    Text("First Year Team Played:")
-                                    Text(team.firstYearOfPlay)
-                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 10))
-                                    Link("Site URL", destination: URL(string: team.officialSiteUrl)!)
-                                    
-                                }
-                            }label: {
-                                Text(team.name)
-                                
-                            }
+            List(standingViewModel.finalArray) { teamRecord in
+                VStack(alignment: .leading){
+                    NavigationLink {
+                        VStack{
+                            Text("Team:")
+                            
                         }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }label: {
+                        HStack{
+                            Text(teamRecord.team.name)
+                            Text("\(teamRecord.leagueRecord.wins)")
+                                .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
+                            Text("- \(teamRecord.leagueRecord.losses)")
+                            Text("- \(teamRecord.leagueRecord.ot)")
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        
                     }
+                }
+
+                }
+            }
                     .navigationTitle("Home")
                 }
     }
