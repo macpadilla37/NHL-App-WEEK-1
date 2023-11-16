@@ -7,16 +7,18 @@
 
 import Foundation
 
-struct NationalHockeyLeague: Codable, Identifiable {
-    var id: Int { return UUID().hashValue }
-    let copyright: String
-    let teams: [Team]
+struct NationalHockeyLeague: Decodable {
+    let data: [Team]
 }
 
-struct Team: Codable, Identifiable {
-    let id: Int
-    let name: String
-    let abbreviation: String
-    let firstYearOfPlay: String
-    let officialSiteUrl: String
+struct Team: Decodable, Identifiable {
+    var id: Int { return UUID().hashValue }
+    let seasonId: Int
+    let gamesPlayed: Int
+    let goalsAgainst: Int
+    let goalsFor: Int
+    let losses: Int
+    let points: Int
+    let teamFullName: String
+    let wins: Int
 }

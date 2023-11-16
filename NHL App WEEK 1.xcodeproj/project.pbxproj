@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D448F3CE2AF03AAA004651DA /* LogoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448F3CD2AF03AAA004651DA /* LogoViewModel.swift */; };
-		D448F3D02AF03AFE004651DA /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448F3CF2AF03AFE004651DA /* Logo.swift */; };
+		D4A1A4772AFEDAC100ACDE77 /* BlackOpsOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4A1A4762AFEDAC100ACDE77 /* BlackOpsOne-Regular.ttf */; };
+		D4A1A4792AFEDACB00ACDE77 /* FjallaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4A1A4782AFEDACB00ACDE77 /* FjallaOne-Regular.ttf */; };
 		D4B8B9092AEA2623003E2C46 /* NHL_App_WEEK_1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B9082AEA2623003E2C46 /* NHL_App_WEEK_1App.swift */; };
 		D4B8B90B2AEA2623003E2C46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B90A2AEA2623003E2C46 /* ContentView.swift */; };
 		D4B8B90D2AEA2627003E2C46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B8B90C2AEA2627003E2C46 /* Assets.xcassets */; };
@@ -21,7 +21,6 @@
 		D4B8B93B2AEAED99003E2C46 /* HomeViewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B93A2AEAED99003E2C46 /* HomeViewTab.swift */; };
 		D4B8B93D2AEAEE82003E2C46 /* GameViewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B93C2AEAEE82003E2C46 /* GameViewTab.swift */; };
 		D4B8B93F2AEAEE9B003E2C46 /* StandingViewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B93E2AEAEE9B003E2C46 /* StandingViewTab.swift */; };
-		D4B8B9412AEAEEBB003E2C46 /* PhotoViewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B9402AEAEEBB003E2C46 /* PhotoViewTab.swift */; };
 		D4B8B9442AEB1029003E2C46 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B9432AEB1028003E2C46 /* GameViewModel.swift */; };
 		D4B8B9462AEB1046003E2C46 /* StandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B9452AEB1046003E2C46 /* StandingViewModel.swift */; };
 		D4B8B94A2AEB1075003E2C46 /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B9492AEB1075003E2C46 /* Standings.swift */; };
@@ -46,8 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D448F3CD2AF03AAA004651DA /* LogoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoViewModel.swift; sourceTree = "<group>"; };
-		D448F3CF2AF03AFE004651DA /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		D4A1A4762AFEDAC100ACDE77 /* BlackOpsOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BlackOpsOne-Regular.ttf"; sourceTree = "<group>"; };
+		D4A1A4782AFEDACB00ACDE77 /* FjallaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FjallaOne-Regular.ttf"; sourceTree = "<group>"; };
+		D4A1A47A2AFEDAF000ACDE77 /* NHL-App-WEEK-1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "NHL-App-WEEK-1-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D4B8B9052AEA2623003E2C46 /* NHL App WEEK 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NHL App WEEK 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B8B9082AEA2623003E2C46 /* NHL_App_WEEK_1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHL_App_WEEK_1App.swift; sourceTree = "<group>"; };
 		D4B8B90A2AEA2623003E2C46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 		D4B8B93A2AEAED99003E2C46 /* HomeViewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTab.swift; sourceTree = "<group>"; };
 		D4B8B93C2AEAEE82003E2C46 /* GameViewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewTab.swift; sourceTree = "<group>"; };
 		D4B8B93E2AEAEE9B003E2C46 /* StandingViewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingViewTab.swift; sourceTree = "<group>"; };
-		D4B8B9402AEAEEBB003E2C46 /* PhotoViewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewTab.swift; sourceTree = "<group>"; };
 		D4B8B9432AEB1028003E2C46 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		D4B8B9452AEB1046003E2C46 /* StandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingViewModel.swift; sourceTree = "<group>"; };
 		D4B8B9492AEB1075003E2C46 /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
@@ -119,6 +118,7 @@
 		D4B8B9072AEA2623003E2C46 /* NHL App WEEK 1 */ = {
 			isa = PBXGroup;
 			children = (
+				D4A1A47A2AFEDAF000ACDE77 /* NHL-App-WEEK-1-Info.plist */,
 				D4B8B9082AEA2623003E2C46 /* NHL_App_WEEK_1App.swift */,
 				D4B8B9332AEA2657003E2C46 /* Views */,
 				D4B8B9342AEA266B003E2C46 /* ViewModel */,
@@ -159,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				D4B8B90A2AEA2623003E2C46 /* ContentView.swift */,
+				D4A1A4762AFEDAC100ACDE77 /* BlackOpsOne-Regular.ttf */,
+				D4A1A4782AFEDACB00ACDE77 /* FjallaOne-Regular.ttf */,
 				D4B8B9422AEAEF2C003E2C46 /* ViewTab */,
 			);
 			path = Views;
@@ -168,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				D4B8B9362AEA2793003E2C46 /* TeamViewModel.swift */,
-				D448F3CD2AF03AAA004651DA /* LogoViewModel.swift */,
 				D4B8B9432AEB1028003E2C46 /* GameViewModel.swift */,
 				D4B8B9452AEB1046003E2C46 /* StandingViewModel.swift */,
 			);
@@ -179,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				D4B8B9382AEA27C1003E2C46 /* Teams.swift */,
-				D448F3CF2AF03AFE004651DA /* Logo.swift */,
 				D4B8B94B2AEB1093003E2C46 /* Games.swift */,
 				D4B8B9492AEB1075003E2C46 /* Standings.swift */,
 			);
@@ -192,7 +192,6 @@
 				D4B8B93A2AEAED99003E2C46 /* HomeViewTab.swift */,
 				D4B8B93C2AEAEE82003E2C46 /* GameViewTab.swift */,
 				D4B8B93E2AEAEE9B003E2C46 /* StandingViewTab.swift */,
-				D4B8B9402AEAEEBB003E2C46 /* PhotoViewTab.swift */,
 			);
 			path = ViewTab;
 			sourceTree = "<group>";
@@ -301,6 +300,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A1A4792AFEDACB00ACDE77 /* FjallaOne-Regular.ttf in Resources */,
+				D4A1A4772AFEDAC100ACDE77 /* BlackOpsOne-Regular.ttf in Resources */,
 				D4B8B9112AEA2627003E2C46 /* Preview Assets.xcassets in Resources */,
 				D4B8B90D2AEA2627003E2C46 /* Assets.xcassets in Resources */,
 			);
@@ -329,13 +330,10 @@
 			files = (
 				D4B8B9442AEB1029003E2C46 /* GameViewModel.swift in Sources */,
 				D4B8B93F2AEAEE9B003E2C46 /* StandingViewTab.swift in Sources */,
-				D4B8B9412AEAEEBB003E2C46 /* PhotoViewTab.swift in Sources */,
 				D4B8B94C2AEB1093003E2C46 /* Games.swift in Sources */,
 				D4B8B93B2AEAED99003E2C46 /* HomeViewTab.swift in Sources */,
-				D448F3CE2AF03AAA004651DA /* LogoViewModel.swift in Sources */,
 				D4B8B9392AEA27C1003E2C46 /* Teams.swift in Sources */,
 				D4B8B94A2AEB1075003E2C46 /* Standings.swift in Sources */,
-				D448F3D02AF03AFE004651DA /* Logo.swift in Sources */,
 				D4B8B93D2AEAEE82003E2C46 /* GameViewTab.swift in Sources */,
 				D4B8B9462AEB1046003E2C46 /* StandingViewModel.swift in Sources */,
 				D4B8B90B2AEA2623003E2C46 /* ContentView.swift in Sources */,
@@ -504,6 +502,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NHL-App-WEEK-1-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -542,6 +542,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NHL-App-WEEK-1-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

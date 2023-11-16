@@ -6,3 +6,46 @@
 //
 
 import Foundation
+
+struct NHLGamesToday: Decodable {
+    let gameWeek: [GameWeek]
+}
+struct GameWeek: Decodable {
+    //var id: Int { return UUID().hashValue }
+    let date: String
+    let games: [Games]
+}
+struct Games: Decodable, Identifiable {
+    var id: Int { return UUID().hashValue }
+    let venueUTCOffset: String
+    let awayTeam: AwayTeam
+    let homeTeam: HomeTeam
+    let periodDescriptor: PeriodDescriptor
+}
+struct AwayTeam: Decodable {
+    let placeName: AwayTeamName
+    let logo: URL
+    let score: Int
+}
+struct HomeTeam: Decodable {
+    let placeName: HomeTeamName
+    let logo: URL
+    let score: Int
+}
+
+struct AwayTeamName: Codable {
+    let awayTeamName: String
+    enum CodingKeys: String, CodingKey {
+        case awayTeamName = "default"
+    }
+}
+struct HomeTeamName: Codable {
+    let homeTeamName: String
+    enum CodingKeys: String, CodingKey {
+        case homeTeamName = "default"
+    }
+}
+struct PeriodDescriptor: Decodable {
+    let number: Int
+}
+

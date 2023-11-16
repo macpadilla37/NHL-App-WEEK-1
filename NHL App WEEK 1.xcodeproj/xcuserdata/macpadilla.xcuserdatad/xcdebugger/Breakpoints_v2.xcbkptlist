@@ -7,79 +7,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "169EB95D-1A28-43FC-9132-0E532659FB9E"
+            uuid = "3F6D8143-F70A-4250-9D9C-DDA1A944B00D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NHL App WEEK 1/ViewModel/StandingViewModel.swift"
+            filePath = "NHL App WEEK 1/Views/ViewTab/HomeViewTab.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "getAllStandings()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4515E4D7-826E-4950-BD99-B6DE7068147C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NHL App WEEK 1/ViewModel/TeamViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getAllTeams()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FF48DF1E-CA20-4CA5-9D65-D7016754DD5F"
+            uuid = "545D2E0A-9ABF-47B6-8902-14E6FB7AE0BE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NHL App WEEK 1/ViewModel/StandingViewModel.swift"
+            filePath = "NHL App WEEK 1/Views/ViewTab/HomeViewTab.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "getAllStandings()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "397A7761-19CF-4C91-9C2E-28260D1B2CCE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NHL App WEEK 1/ViewModel/StandingViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "getAllStandings()"
-            landmarkType = "7">
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "397A7761-19CF-4C91-9C2E-28260D1B2CCE - a579f58086f6d511"
+                  uuid = "545D2E0A-9ABF-47B6-8902-14E6FB7AE0BE - d92015b4f845c81a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for NHL_App_WEEK_1.StandingViewModel.getAllStandings() async -&gt; ()"
+                  symbolName = "NHL_App_WEEK_1.HomeTabView.body.getter : some"
                   moduleName = "NHL App WEEK 1"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macpadilla/Desktop/NHL%20App%20WEEK%201/NHL%20App%20WEEK%201/ViewModel/StandingViewModel.swift"
+                  urlString = "file:///Users/macpadilla/Desktop/NHL%20App%20WEEK%201/NHL%20App%20WEEK%201/Views/ViewTab/HomeViewTab.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "118">
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "146">
                </Location>
                <Location
-                  uuid = "397A7761-19CF-4C91-9C2E-28260D1B2CCE - a579f58086f6d511"
+                  uuid = "545D2E0A-9ABF-47B6-8902-14E6FB7AE0BE - fc29b99ccc6d639a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for NHL_App_WEEK_1.StandingViewModel.getAllStandings() async -&gt; ()"
+                  symbolName = "closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;NHL_App_WEEK_1.Team&gt;, Swift.Int, &lt;&lt;opaque return type of SwiftUI.View.frame(minWidth: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, idealWidth: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, maxWidth: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, minHeight: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, idealHeight: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, maxHeight: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;&gt; in NHL_App_WEEK_1.HomeTabView.body.getter : some"
                   moduleName = "NHL App WEEK 1"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macpadilla/Desktop/NHL%20App%20WEEK%201/NHL%20App%20WEEK%201/ViewModel/StandingViewModel.swift"
+                  urlString = "file:///Users/macpadilla/Desktop/NHL%20App%20WEEK%201/NHL%20App%20WEEK%201/Views/ViewTab/HomeViewTab.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "113">
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "134">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -87,16 +87,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F0CC98E-649B-4963-9A15-2115E63FFD58"
+            uuid = "063B7431-4D19-4924-967B-D129763F887D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NHL App WEEK 1/ViewModel/StandingViewModel.swift"
+            filePath = "NHL App WEEK 1/Views/ViewTab/HomeViewTab.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getAllStandings()"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "HomeTabView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "063B7431-4D19-4924-967B-D129763F887D - e9a3bdd67e9899b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NHL_App_WEEK_1.HomeTabView.init() -&gt; NHL_App_WEEK_1.HomeTabView"
+                  moduleName = "NHL App WEEK 1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macpadilla/Desktop/NHL%20App%20WEEK%201/NHL%20App%20WEEK%201/Views/ViewTab/HomeViewTab.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  uuid = "063B7431-4D19-4924-967B-D129763F887D - 5f3d404920a5eafd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NHL_App_WEEK_1.HomeTabView.init(teamViewModel: NHL_App_WEEK_1.TeamViewModel) -&gt; NHL_App_WEEK_1.HomeTabView"
+                  moduleName = "NHL App WEEK 1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macpadilla/Desktop/NHL%20App%20WEEK%201/NHL%20App%20WEEK%201/Views/ViewTab/HomeViewTab.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8175E59D-516F-4885-9345-98E7AB379209"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NHL App WEEK 1/ViewModel/GameViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getAllGames()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "221792E3-22A1-49D8-93A0-8235B86AA6CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NHL App WEEK 1/ViewModel/GameViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getAllGames()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
