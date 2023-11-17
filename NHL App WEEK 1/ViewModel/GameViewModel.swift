@@ -8,7 +8,7 @@
 import Foundation
 
 class GameViewModel: ObservableObject {
-        @Published var NHLgames =  [Games]()
+        @Published var GameDay: [Games] = []
         @Published var isLoading = true
 
         @MainActor
@@ -18,13 +18,16 @@ class GameViewModel: ObservableObject {
                 let url = URL(string: "https://api-web.nhle.com/v1/schedule/now")!
                 let (data, _) = try await URLSession.shared.data(from: url)
                 print(data)
-                NHLgames = try JSONDecoder().decode(GameWeek.self, from: data).games
+                let gameWeek = try JSONDecoder().decode(NHLGamesToday.self, from: data).gameWeek
                 
-                
+                    for NHLgame in gameWeek {
+                        GameDay.append(contentsOf: NHLgame.games)
+                        
+                    }
                 
                 isLoading = false
             } catch {
-                print("Error: \(error.localizedDescription)")
+                print("Error: \(error)")
                 isLoading = false
             }
         }

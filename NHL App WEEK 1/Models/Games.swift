@@ -8,29 +8,30 @@
 import Foundation
 
 struct NHLGamesToday: Decodable {
+    let nextStartDate: String
     let gameWeek: [GameWeek]
 }
-struct GameWeek: Decodable {
-    //var id: Int { return UUID().hashValue }
+struct GameWeek: Decodable, Identifiable {
+    var id: Int { return UUID().hashValue }
     let date: String
     let games: [Games]
 }
 struct Games: Decodable, Identifiable {
-    var id: Int { return UUID().hashValue }
-    let venueUTCOffset: String
-    let awayTeam: AwayTeam
-    let homeTeam: HomeTeam
-    let periodDescriptor: PeriodDescriptor
+    var id: Int
+    let venueUTCOffset: String?
+    let awayTeam: AwayTeam?
+    let homeTeam: HomeTeam?
+    let periodDescriptor: PeriodDescriptor?
 }
 struct AwayTeam: Decodable {
     let placeName: AwayTeamName
     let logo: URL
-    let score: Int
+    let score: Int?
 }
 struct HomeTeam: Decodable {
     let placeName: HomeTeamName
     let logo: URL
-    let score: Int
+    let score: Int?
 }
 
 struct AwayTeamName: Codable {
@@ -46,6 +47,6 @@ struct HomeTeamName: Codable {
     }
 }
 struct PeriodDescriptor: Decodable {
-    let number: Int
+    let number: Int?
 }
 

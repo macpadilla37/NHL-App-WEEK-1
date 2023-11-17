@@ -31,46 +31,38 @@ struct GameTabView: View {
                 }
                 .background(.black)
                 .scrollContentBackground(.hidden)
-                List(gameViewModel.NHLgames){ game in
+                List(gameViewModel.GameDay){ game in
                     VStack{
                         HStack{
-                            HStack{
-                                //Text("5:00pm EST")
-                                Text("\(game.venueUTCOffset)pm MST")
-                                    .font(Font.custom("FjallaOne-Regular", size: 20))
-                                Text("Period")
-                                    .font(Font.custom("FjallaOne-Regular", size: 12))
-                                    .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 0))
-                                //Text("0")
-                                Text("\(game.periodDescriptor.number)")
-                                    .font(Font.custom("FjallaOne-Regular", size: 20))
-                            }
+                            Text("\(game.venueUTCOffset ?? "")pm MST")
+                                .font(Font.custom("FjallaOne-Regular", size: 20))
+                            Text("Period")
+                                .font(Font.custom("FjallaOne-Regular", size: 12))
+                                .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 0))
+                            Text("\(game.periodDescriptor?.number ?? 0)")
+                                .font(Font.custom("FjallaOne-Regular", size: 20))
                         }
                         HStack{
-                            Image("NHLlogo")
-                                .resizable()
+                            AsyncImage(url: game.awayTeam?.logo)
+                            //Image("NHLlogo")
+                                //.resizable()
                                 .scaledToFill()
                                 .frame(width: 40, height: 40)
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                            Text("Away Team")
-                            //Text(game.awayTeam.placeName.awayTeamName)
+                            Text(game.awayTeam?.placeName.awayTeamName ?? "Unknown")
                                 .font(Font.custom("FjallaOne-Regular", size: 30))
-                            Text("0")
-                            //Text(game.awayTeam.score)
+                            Text("\(game.awayTeam?.score ?? 0)")
                                 .font(Font.custom("BlackOpsOne-Regular", size: 40))
                                 .padding(EdgeInsets(top: 0, leading: 80, bottom: 0, trailing: 0))
                         }
                         HStack{
-                            Image("NHLlogo")
-                                .resizable()
+                            AsyncImage(url: game.awayTeam?.logo)
+                            //Image("NHLlogo")
+                               // .resizable()
                                 .scaledToFill()
                                 .frame(width: 40, height: 40)
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                            Text("Home Team")
-                            //Text(game.homeTeam.placeName.homeTeamName)
+                            Text(game.homeTeam?.placeName.homeTeamName ?? "Unknown")
                                 .font(Font.custom("FjallaOne-Regular", size: 30))
-                            Text("0")
-                            //Text(game.homeTeam.score)
+                            Text("\(game.homeTeam?.score ?? 0)")
                                 .font(Font.custom("BlackOpsOne-Regular", size: 40))
                                 .padding(EdgeInsets(top: 0, leading: 75, bottom: 0, trailing: 0))
                         }
