@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D494CF562B1924DB00476646 /* SVGView in Frameworks */ = {isa = PBXBuildFile; productRef = D494CF552B1924DB00476646 /* SVGView */; };
 		D4A1A4772AFEDAC100ACDE77 /* BlackOpsOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4A1A4762AFEDAC100ACDE77 /* BlackOpsOne-Regular.ttf */; };
 		D4A1A4792AFEDACB00ACDE77 /* FjallaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4A1A4782AFEDACB00ACDE77 /* FjallaOne-Regular.ttf */; };
 		D4B8B9092AEA2623003E2C46 /* NHL_App_WEEK_1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B8B9082AEA2623003E2C46 /* NHL_App_WEEK_1App.swift */; };
@@ -75,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D494CF562B1924DB00476646 /* SVGView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +214,9 @@
 			dependencies = (
 			);
 			name = "NHL App WEEK 1";
+			packageProductDependencies = (
+				D494CF552B1924DB00476646 /* SVGView */,
+			);
 			productName = "NHL App WEEK 1";
 			productReference = D4B8B9052AEA2623003E2C46 /* NHL App WEEK 1.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +289,9 @@
 				Base,
 			);
 			mainGroup = D4B8B8FC2AEA2623003E2C46;
+			packageReferences = (
+				D494CF542B1924DB00476646 /* XCRemoteSwiftPackageReference "SVGView" */,
+			);
 			productRefGroup = D4B8B9062AEA2623003E2C46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -699,6 +707,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D494CF542B1924DB00476646 /* XCRemoteSwiftPackageReference "SVGView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/SVGView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D494CF552B1924DB00476646 /* SVGView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D494CF542B1924DB00476646 /* XCRemoteSwiftPackageReference "SVGView" */;
+			productName = SVGView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D4B8B8FD2AEA2623003E2C46 /* Project object */;
 }

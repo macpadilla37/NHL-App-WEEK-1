@@ -6,6 +6,7 @@
 //
 import SwiftUI
 import Foundation
+import SVGView
 
 struct GameTabView: View {
     @State private var currentDate = Date()
@@ -43,9 +44,10 @@ struct GameTabView: View {
                                 .font(Font.custom("FjallaOne-Regular", size: 20))
                         }
                         HStack{
-                            AsyncImage(url: game.awayTeam?.logo)
-                            //Image("NHLlogo")
-                                //.resizable()
+                            //SVGView(contentsOf: Bundle.main.url(forResource: "example", withExtension: "svg")!)
+                            //WebView(url: game.awayTeam!.logo)
+                            SVGView(url: game.awayTeam.logo)
+                                .resizable()
                                 .scaledToFill()
                                 .frame(width: 40, height: 40)
                             Text(game.awayTeam?.placeName.awayTeamName ?? "Unknown")
@@ -55,7 +57,7 @@ struct GameTabView: View {
                                 .padding(EdgeInsets(top: 0, leading: 80, bottom: 0, trailing: 0))
                         }
                         HStack{
-                            AsyncImage(url: game.awayTeam?.logo)
+                            AsyncImage(url: game.homeTeam?.logo)
                             //Image("NHLlogo")
                                // .resizable()
                                 .scaledToFill()
@@ -84,7 +86,6 @@ private func getFormattedDate() -> String {
     return dateFormatter.string(from: currentDate)
     }
 }
-
 
 #Preview {
     GameTabView()
