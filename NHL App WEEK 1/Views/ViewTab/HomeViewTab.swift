@@ -8,9 +8,9 @@ import SwiftUI
 import Foundation
 
 struct HomeTabView: View {
-    @State private var isPressedleft = false
-    @State private var isFilled = false
+    @State private var searchText = ""
     @ObservedObject var teamViewModel = TeamViewModel()
+    var isToggled = false
     var body: some View {
         NavigationView {
             VStack{
@@ -27,7 +27,12 @@ struct HomeTabView: View {
                 }
                 .background(.black)
                 .ignoresSafeArea()
-                List(teamViewModel.NHL) { team in
+                
+                SearchBar(searchText: $searchText)
+                
+                List(teamViewModel.NHL.filter {
+                    searchText.isEmpty || $0.teamFullName.localizedCaseInsensitiveContains(searchText)
+                }) { team in
                     VStack(alignment: .leading){
                         NavigationLink {
                             VStack{
@@ -102,18 +107,6 @@ struct HomeTabView: View {
                         }label: {
                             Text(team.teamFullName)
                                 .font(Font.custom("FjallaOne-Regular", size: 20))
-                            Button(action: {
-                                withAnimation {
-                                    self.isPressedleft.toggle()
-                                }
-                            }) {
-                                Image(systemName: isFilled ? "heart.fill" : "heart")
-                                    .foregroundColor(isFilled ? .red : .black)
-                                    .onTapGesture {
-                                        isFilled.toggle()
-                                    }
-                            }
-                            
                         }
                     }
                     
@@ -128,6 +121,30 @@ struct HomeTabView: View {
     }
 }
 
+struct SearchBar: View {
+    @Binding var searchText: String
+
+    var body: some View {
+        HStack {
+            TextField("Search teams", text: $searchText)
+                .padding(7)
+                .padding(.horizontal, 25)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal, 10)
+
+            if !searchText.isEmpty {
+                Button(action: {
+                    searchText = ""
+                }) {
+                    Image(systemName: "multiply.circle.fill")
+                        .padding(.horizontal, 10)
+                        .foregroundColor(.gray)
+                }
+            }
+        }
+    }
+}
 
 #Preview {
     HomeTabView()

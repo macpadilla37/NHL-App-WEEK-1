@@ -21,4 +21,5 @@ struct Team: Decodable, Identifiable {
     let points: Int
     let teamFullName: String
     let wins: Int
+    
 }

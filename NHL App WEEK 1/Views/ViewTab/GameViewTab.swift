@@ -44,12 +44,11 @@ struct GameTabView: View {
                                 .font(Font.custom("FjallaOne-Regular", size: 20))
                         }
                         HStack{
-                            //SVGView(contentsOf: Bundle.main.url(forResource: "example", withExtension: "svg")!)
-                            //WebView(url: game.awayTeam!.logo)
-                            SVGView(url: game.awayTeam.logo)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
+                           // AsyncImage(url: game.homeTeam?.logo)
+                           // SVGView(url: game.awayTeam.logo)
+                              //  .resizable()
+                              //  .scaledToFill()
+                              //  .frame(width: 40, height: 40)
                             Text(game.awayTeam?.placeName.awayTeamName ?? "Unknown")
                                 .font(Font.custom("FjallaOne-Regular", size: 30))
                             Text("\(game.awayTeam?.score ?? 0)")
@@ -57,11 +56,11 @@ struct GameTabView: View {
                                 .padding(EdgeInsets(top: 0, leading: 80, bottom: 0, trailing: 0))
                         }
                         HStack{
-                            AsyncImage(url: game.homeTeam?.logo)
+                           // AsyncImage(url: game.homeTeam?.logo)
                             //Image("NHLlogo")
                                // .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
+                              //  .scaledToFill()
+                               // .frame(width: 40, height: 40)
                             Text(game.homeTeam?.placeName.homeTeamName ?? "Unknown")
                                 .font(Font.custom("FjallaOne-Regular", size: 30))
                             Text("\(game.homeTeam?.score ?? 0)")
