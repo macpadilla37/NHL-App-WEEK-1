@@ -37,9 +37,10 @@ struct GameTabView: View {
                         HStack{
                             Text("\(game.venueUTCOffset ?? "")pm MST")
                                 .font(Font.custom("FjallaOne-Regular", size: 20))
+                                .frame(width: 120, alignment: .topLeading)
                             Text("Period")
                                 .font(Font.custom("FjallaOne-Regular", size: 12))
-                                .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 0))
+                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                             Text("\(game.periodDescriptor?.number ?? 0)")
                                 .font(Font.custom("FjallaOne-Regular", size: 20))
                         }
@@ -51,6 +52,7 @@ struct GameTabView: View {
                               //  .frame(width: 40, height: 40)
                             Text(game.awayTeam?.placeName.awayTeamName ?? "Unknown")
                                 .font(Font.custom("FjallaOne-Regular", size: 30))
+                                .frame(width: 150, alignment: .topLeading)
                             Text("\(game.awayTeam?.score ?? 0)")
                                 .font(Font.custom("BlackOpsOne-Regular", size: 40))
                                 .padding(EdgeInsets(top: 0, leading: 80, bottom: 0, trailing: 0))
@@ -63,6 +65,7 @@ struct GameTabView: View {
                                // .frame(width: 40, height: 40)
                             Text(game.homeTeam?.placeName.homeTeamName ?? "Unknown")
                                 .font(Font.custom("FjallaOne-Regular", size: 30))
+                                .frame(width: 155, alignment: .topLeading)
                             Text("\(game.homeTeam?.score ?? 0)")
                                 .font(Font.custom("BlackOpsOne-Regular", size: 40))
                                 .padding(EdgeInsets(top: 0, leading: 75, bottom: 0, trailing: 0))
@@ -72,6 +75,7 @@ struct GameTabView: View {
                 }
                 .background(.gray)
                 .scrollContentBackground(.hidden)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 80, trailing: 0))
             }
             .background(.black)
             .ignoresSafeArea()
