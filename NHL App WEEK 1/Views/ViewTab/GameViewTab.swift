@@ -11,6 +11,56 @@ import SVGView
 struct GameTabView: View {
     @State private var currentDate = Date()
     @ObservedObject var gameViewModel = GameViewModel()
+    
+    func systemName(for teamName: String) -> String {
+        let cleanedName = teamName.replacingOccurrences(of: "[^a-zA-Z0-9]", with: "", options: .regularExpression)
+        return cleanedName.lowercased()
+    }
+
+    func imageName(for teamName: String) -> String {
+        let nameMap: [String: String] = [
+            "vegas": "VegasGoldenKnightsLogo",
+            "rangers": "NewYorkRangersLogo",
+            "boston" :  "BostonBruinsLogo",
+            "vancouver" : "VancouverCanucksLogo",
+            "losangeles" : "LosAngelesKingsLogo",
+            "colorado" : "ColoradoAvalancheLogo",
+            "florida" : "FloridaPanthersLogo",
+            "toronto" : "TorontoMapleLeafsLogo",
+            "dallas" : "DallasStarsLogo",
+            "winnipeg" : "WinnipegJetsLogo",
+            "detroit" : "DetroitRedWingsLogo",
+            "philadelphia" : "PhiladelphiaFlyersLogo",
+            "islanders" : "NewYorkIslandersLogo",
+            "nashville" : "NashvillePredatorsLogo",
+            "washington" : "WashingtonCapitalsLogo",
+            "newjersey" : "NewJerseyDevilsLogo",
+            "carolina" : "CarolinaHurricanesLogo",
+            "tampabay" : "TampaBayLightningLogo",
+            "pittsburgh" : "PittsburghPenguinsLogo",
+            "arizona" : "ArizonaCoyotesLogo",
+            
+            "montral" : "MontrealCanadiensLogo",
+            
+            "edmonton" : "EdmontonOilersLogo",
+            "stlouis" : "StLouisBluesLogo",
+            "buffalo" : "BuffaloSabresLogo",
+            "calgary" : "CalgaryFlamesLogo",
+            "seattle" : "SeattleKrakenLogo",
+            "minnesota" : "MinnesotaWildLogo",
+            "columbus" : "ColumbusBlueJacketsLogo",
+            "ottawa" : "OttawaSenatorsLogo",
+            "sanjose" : "SanJoseSharksLogo",
+            "anaheim" : "AnaheimDucksLogo",
+            "chicago" : "ChicagoBlackhawksLogo"
+            
+        ]
+
+        let systemName = systemName(for: teamName)
+        return nameMap[systemName] ?? "NHLlogo"
+    }
+    
+    
     var body: some View {
             VStack{
                 HStack{
@@ -32,46 +82,45 @@ struct GameTabView: View {
                 }
                 .background(.black)
                 .scrollContentBackground(.hidden)
-                List(gameViewModel.GameDay){ game in
-                    VStack{
-                        HStack{
-                            Text("\(game.venueUTCOffset ?? "")pm MST")
-                                .font(Font.custom("FjallaOne-Regular", size: 20))
-                                .frame(width: 120, alignment: .topLeading)
-                            Text("Period")
-                                .font(Font.custom("FjallaOne-Regular", size: 12))
-                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-                            Text("\(game.periodDescriptor?.number ?? 0)")
-                                .font(Font.custom("FjallaOne-Regular", size: 20))
-                        }
-                        HStack{
-                           // AsyncImage(url: game.homeTeam?.logo)
-                           // SVGView(url: game.awayTeam.logo)
-                              //  .resizable()
-                              //  .scaledToFill()
-                              //  .frame(width: 40, height: 40)
-                            Text(game.awayTeam?.placeName.awayTeamName ?? "Unknown")
-                                .font(Font.custom("FjallaOne-Regular", size: 30))
-                                .frame(width: 150, alignment: .topLeading)
-                            Text("\(game.awayTeam?.score ?? 0)")
-                                .font(Font.custom("BlackOpsOne-Regular", size: 40))
-                                .padding(EdgeInsets(top: 0, leading: 80, bottom: 0, trailing: 0))
-                        }
-                        HStack{
-                           // AsyncImage(url: game.homeTeam?.logo)
-                            //Image("NHLlogo")
-                               // .resizable()
-                              //  .scaledToFill()
-                               // .frame(width: 40, height: 40)
-                            Text(game.homeTeam?.placeName.homeTeamName ?? "Unknown")
-                                .font(Font.custom("FjallaOne-Regular", size: 30))
-                                .frame(width: 155, alignment: .topLeading)
-                            Text("\(game.homeTeam?.score ?? 0)")
-                                .font(Font.custom("BlackOpsOne-Regular", size: 40))
-                                .padding(EdgeInsets(top: 0, leading: 75, bottom: 0, trailing: 0))
+                List {
+                    ForEach(gameViewModel.GameDay, id: \.id) { game in
+                        VStack{
+                            HStack{
+                                Text("\(game.venueUTCOffset ?? "")pm MST")
+                                    .font(Font.custom("FjallaOne-Regular", size: 20))
+                                    .frame(width: 120, alignment: .topLeading)
+                                Text("Period")
+                                    .font(Font.custom("FjallaOne-Regular", size: 12))
+                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+                                Text("\(game.periodDescriptor?.number ?? 0)")
+                                    .font(Font.custom("FjallaOne-Regular", size: 20))
+                            }
+                            HStack{
+                                Image(imageName(for: game.awayTeam?.placeName.awayTeamName ?? "Unknown"))
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 40)
+                                Text(game.awayTeam?.placeName.awayTeamName ?? "Unknown")
+                                    .font(Font.custom("FjallaOne-Regular", size: 30))
+                                    .frame(width: 150, alignment: .topLeading)
+                                Text("\(game.awayTeam?.score ?? 0)")
+                                    .font(Font.custom("BlackOpsOne-Regular", size: 40))
+                                    .padding(EdgeInsets(top: 0, leading: 80, bottom: 0, trailing: 0))
+                            }
+                            HStack{
+                                Image(imageName(for: game.homeTeam?.placeName.homeTeamName ?? "Unknown"))
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 40)
+                                Text(game.homeTeam?.placeName.homeTeamName ?? "Unknown")
+                                    .font(Font.custom("FjallaOne-Regular", size: 30))
+                                    .frame(width: 155, alignment: .topLeading)
+                                Text("\(game.homeTeam?.score ?? 0)")
+                                    .font(Font.custom("BlackOpsOne-Regular", size: 40))
+                                    .padding(EdgeInsets(top: 0, leading: 75, bottom: 0, trailing: 0))
+                            }
                         }
                     }
-
                 }
                 .background(.gray)
                 .scrollContentBackground(.hidden)

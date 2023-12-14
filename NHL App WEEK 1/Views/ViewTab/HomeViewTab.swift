@@ -11,6 +11,21 @@ struct HomeTabView: View {
     @State private var searchText = ""
     @ObservedObject var teamViewModel = TeamViewModel()
     var isToggled = false
+    
+    func formatSeasonId(_ seasonId: Int) -> String {
+        let seasonString = String(seasonId)
+
+        guard seasonString.count == 8 else {
+            return seasonString
+        }
+
+        let index = seasonString.index(seasonString.startIndex, offsetBy: 4)
+        let firstYear = seasonString[..<index]
+        let secondYear = seasonString[index...]
+
+        return "\(firstYear)/\(secondYear)"
+    }
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -45,7 +60,7 @@ struct HomeTabView: View {
                                         Text("Season Year(s):")
                                             .font(Font.custom("FjallaOne-Regular", size: 20))
                                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-                                        Text(String(team.seasonId))
+                                        Text(formatSeasonId(team.seasonId))
                                             .font(Font.custom("FjallaOne-Regular", size: 25))
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                     }

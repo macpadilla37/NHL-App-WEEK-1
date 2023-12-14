@@ -9,6 +9,55 @@ import Foundation
 
 struct StandingTabView: View {
     @ObservedObject var standingViewModel = StandingViewModel()
+    
+    func systemName(for teamName: String) -> String {
+        let cleanedName = teamName.replacingOccurrences(of: "[^a-zA-Z0-9]", with: "", options: .regularExpression)
+        return cleanedName.lowercased()
+    }
+
+    func imageName(for teamName: String) -> String {
+        let nameMap: [String: String] = [
+            "vegasgoldenknights": "VegasGoldenKnightsLogo",
+            "newyorkrangers": "NewYorkRangersLogo",
+            "bostonbruins" :  "BostonBruinsLogo",
+            "vancouvercanucks" : "VancouverCanucksLogo",
+            "losangeleskings" : "LosAngelesKingsLogo",
+            "coloradoavalanche" : "ColoradoAvalancheLogo",
+            "floridapanthers" : "FloridaPanthersLogo",
+            "torontomapleleafs" : "TorontoMapleLeafsLogo",
+            "dallasstars" : "DallasStarsLogo",
+            "winnipegjets" : "WinnipegJetsLogo",
+            "detroitredwings" : "DetroitRedWingsLogo",
+            "philadelphiaflyers" : "PhiladelphiaFlyersLogo",
+            "newyorkislanders" : "NewYorkIslandersLogo",
+            "nashvillepredators" : "NashvillePredatorsLogo",
+            "washingtoncapitals" : "WashingtonCapitalsLogo",
+            "newjerseydevils" : "NewJerseyDevilsLogo",
+            "carolinahurricanes" : "CarolinaHurricanesLogo",
+            "tampabaylightning" : "TampaBayLightningLogo",
+            "pittsburghpenguins" : "PittsburghPenguinsLogo",
+            "arizonacoyotes" : "ArizonaCoyotesLogo",
+            
+            "montralcanadiens" : "MontrealCanadiensLogo",
+            
+            "edmontonoilers" : "EdmontonOilersLogo",
+            "stlouisblues" : "StLouisBluesLogo",
+            "buffalosabres" : "BuffaloSabresLogo",
+            "calgaryflames" : "CalgaryFlamesLogo",
+            "seattlekraken" : "SeattleKrakenLogo",
+            "minnesotawild" : "MinnesotaWildLogo",
+            "columbusbluejackets" : "ColumbusBlueJacketsLogo",
+            "ottawasenators" : "OttawaSenatorsLogo",
+            "sanjosesharks" : "SanJoseSharksLogo",
+            "anaheimducks" : "AnaheimDucksLogo",
+            "chicagoblackhawks" : "ChicagoBlackhawksLogo"
+            
+        ]
+
+        let systemName = systemName(for: teamName)
+        return nameMap[systemName] ?? "NHLlogo"
+    }
+    
     var body: some View {
         VStack{
             HStack{
@@ -53,16 +102,13 @@ struct StandingTabView: View {
                                     .frame(width: 210, alignment: .topLeading)
                                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                                 HStack{
-                                    Text("\(standing.wins)")
+                                    Image(imageName(for: standing.teamName.teamNameFull))
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 35, height: 35)
+                                    Text("\(standing.wins)-\(standing.losses)-\(standing.otLosses)")
                                         .font(Font.custom("FjallaOne-Regular", size: 15))
-                                    + Text("-")
-                                        .font(Font.custom("FjallaOne-Regular", size: 15))
-                                    + Text("\(standing.losses)")
-                                        .font(Font.custom("FjallaOne-Regular", size: 15))
-                                    + Text("-")
-                                        .font(Font.custom("FjallaOne-Regular", size: 15))
-                                    + Text("\(standing.otLosses)")
-                                        .font(Font.custom("FjallaOne-Regular", size: 15))
+                                        .frame(width: 50, alignment: .topLeading)
                                 }
                                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 40))
                             }
@@ -85,6 +131,8 @@ struct StandingTabView: View {
             .ignoresSafeArea()
     }
 }
+
+
 #Preview {
     StandingTabView()
 }
